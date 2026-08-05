@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agentdown"
+version = "0.1.0"
+description = "A terminal markdown viewer built for what AI coding agents write — plans, checklists, code-file references."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+dependencies = [
+    "rich>=13",
+]
+
+[project.scripts]
+agentdown = "agentdown.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agentdown"]

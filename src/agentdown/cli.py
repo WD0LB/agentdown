@@ -150,7 +150,7 @@ def resolve_memory_files() -> list:
 def main() -> None:
     parser = argparse.ArgumentParser(
         prog="agentdown",
-        description="A terminal markdown viewer built for what AI coding agents write.",
+        description="The terminal companion for AI coding agents — renders their markdown output with style.",
     )
     parser.add_argument(
         "files",

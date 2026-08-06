@@ -1,14 +1,19 @@
 # agentdown
 
-`cat`, but for Markdown. Renders a `.md` file with proper styling — headers, bold/italic,
-lists, tables, syntax-highlighted code blocks, blockquotes, links — straight to your
+The terminal companion for AI coding agents. Tools like Claude Code, Codex, and
+Antigravity constantly write markdown — plans, task checklists, reports, docs —
+and none of it looks like more than a wall of `#` and `*` characters when you
+just `cat` it. agentdown renders it properly: headers, bold/italic, lists,
+tables, syntax-highlighted code blocks, blockquotes, links — straight to your
 terminal.
 
 ```
-$ agentdown README.md
+$ agentdown plan.md
 ```
 
-No pager, no images, no TUI. Just styled output, same spirit as `cat`.
+No pager, no images, no TUI. Just styled output, same spirit as `cat` — but
+built around what agent output actually looks like: task checklists, file
+references, and documents that get rewritten while you watch.
 
 ## Install
 
@@ -45,6 +50,11 @@ Task-list checkboxes (`- [ ]` / `- [x]`) render as ☐ / ☑, and plain-text
 markdown coding agents write.
 
 ### Claude Code shortcuts
+
+The renderer itself works on markdown from any tool. These specific shortcuts,
+today, only know Claude Code's on-disk layout — support for other agents
+(Codex, Antigravity, ...) is on the roadmap, not yet built. See
+[ROADMAP.md](ROADMAP.md).
 
 ```sh
 agentdown --last-plan        # render the most recently modified plan in ~/.claude/plans/

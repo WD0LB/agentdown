@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "agentdown"
 version = "0.1.0"
-description = "A terminal markdown viewer built for what AI coding agents write — plans, checklists, code-file references."
+description = "The terminal companion for AI coding agents — renders the plans, checklists, and docs tools like Claude Code, Codex, and Antigravity write."
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"

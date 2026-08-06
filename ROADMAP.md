@@ -2,6 +2,23 @@
 
 Things discussed, some now implemented, some intentionally deferred.
 
+## Vision
+
+agentdown isn't scoped to one vendor. The goal is to be the terminal
+companion for the whole class of AI coding agents — Claude Code, Codex,
+Antigravity, and whatever comes next — by rendering the markdown artifacts
+they all produce (plans, task checklists, docs, reports) properly, and by
+knowing where each of those tools keeps that output on disk.
+
+The rendering engine already meets that bar: it's plain markdown-in,
+styled-terminal-out, with no Claude Code–specific assumptions baked in.
+The **ecosystem shortcuts** (`--last-plan`, `--claude-md`, `--memory`)
+don't yet — they're hardcoded to Claude Code's file layout today. Extending
+them to Codex and Antigravity is the next concrete step toward the vision;
+see "Generalize ecosystem shortcuts" below. Messaging/branding has been
+updated to reflect this positioning; the shortcut generalization itself is
+still pending research and is intentionally sequenced as separate work.
+
 ## Done
 
 - **`file:line` reference highlighting** — plain-text references like
@@ -39,6 +56,23 @@ Things discussed, some now implemented, some intentionally deferred.
   not a documented API) — same fragility caveat as the JSONL schema below,
   though the blast radius here is just "shortcut stops resolving," not
   a broken parse.
+
+## Generalize ecosystem shortcuts beyond Claude Code
+
+`--last-plan` / `--claude-md` / `--memory` currently only know Claude Code's
+`~/.claude/...` layout (see "Ecosystem-aware shortcuts" above). To back up
+the broader positioning honestly, the same shortcuts (or equivalents) need
+to work for Codex and Antigravity too. Not started — requires research
+first, same discipline as the conversation-history adapters below (verify
+actual on-disk conventions before writing code against them, don't guess):
+
+- **Codex CLI** — where does it keep plans/task output, if it produces
+  markdown artifacts at all? Not yet investigated.
+- **Antigravity** — same open question. Not yet investigated.
+
+Likely shape: generalize `resolve_last_plan()` etc. into a small per-tool
+adapter registry (mirroring the adapter idea below), rather than three
+more hardcoded `--claude-*`-style flags per tool.
 
 ## Bigger, generalized: AI conversation-history viewer
 

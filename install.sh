@@ -4,7 +4,7 @@
 #   - curled directly (installs straight from GitHub)
 set -euo pipefail
 
-REPO_URL="https://github.com/<your-username>/agentdown.git"
+REPO_URL="https://github.com/WD0LB/agentdown.git"
 
 if ! command -v pipx >/dev/null 2>&1; then
     echo "pipx not found — installing it with pip..."

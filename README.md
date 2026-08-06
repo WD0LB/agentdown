@@ -15,13 +15,13 @@ No pager, no images, no TUI. Just styled output, same spirit as `cat`.
 **Via pipx (recommended):**
 
 ```sh
-pipx install git+https://github.com/<your-username>/agentdown.git
+pipx install git+https://github.com/WD0LB/agentdown.git
 ```
 
 **Via the install script:**
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/<your-username>/agentdown/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/WD0LB/agentdown/main/install.sh | bash
 ```
 
 Both install an `agentdown` command on your PATH. The script installs `pipx` first if you
@@ -59,7 +59,7 @@ explicit file arguments.
 ## Development
 
 ```sh
-git clone https://github.com/<your-username>/agentdown.git
+git clone https://github.com/WD0LB/agentdown.git
 cd agentdown
 pip install -e .
 agentdown README.md
